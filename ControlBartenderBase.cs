@@ -34,7 +34,7 @@ namespace Ssapj.ControlBartenderViaCom
             });
         }
 
-        protected void StartBartender()
+        protected void RestartBartender()
         {
             //reset
             Marshal.FinalReleaseComObject(this._bartenderApplication);
