@@ -25,9 +25,8 @@ namespace Ssapj.ControlBartenderViaCom
         {
             await Task.Run(() =>
             {
-                this._bartenderApplication = new BarTender.Application()
+                this._bartenderApplication = new Application()
                 {
-                    VisibleWindows = BarTender.BtVisibleWindows.btNone
                 };
 
                 this._batenderProcessId = this._bartenderApplication.ProcessId;
@@ -43,7 +42,6 @@ namespace Ssapj.ControlBartenderViaCom
 
             this._bartenderApplication = new Application()
             {
-                VisibleWindows = BarTender.BtVisibleWindows.btNone
             };
 
             this._batenderProcessId = this._bartenderApplication.ProcessId;
