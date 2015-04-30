@@ -12,7 +12,7 @@ This Class Library controls just Start/End of BarTender and its managed referenc
     {
     	//control something
     }
-- Then you use this class in using satement
+Then you use this class in using satement
 
     using (var foo = new Hoge())
     {
@@ -20,7 +20,7 @@ This Class Library controls just Start/End of BarTender and its managed referenc
     	bar.Wait();
     	//do something
     }
-- Or Dispose() finally
+Or Dispose() finally
 
     var foo = new Hoge();
     try {
