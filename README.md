@@ -29,7 +29,7 @@ Or Dispose() finally
 		//do something
 	}
 	finally {
-		Hoge.Dispose();
+		foo.Dispose();
 	}
  
 [BarTender]: http://www.seagullscientific.com/label-software/barcode-label-design-and-printing.aspx
