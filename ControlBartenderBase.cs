@@ -1,8 +1,8 @@
 ﻿using BarTender;
 using System;
 using System.Diagnostics;
-using System.Runtime.InteropServices;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.Marshal;
 
 namespace Ssapj.ControlBartenderViaCom
 {
@@ -11,23 +11,14 @@ namespace Ssapj.ControlBartenderViaCom
         private Application _bartenderApplication;
         private int _batenderProcessId = -1;
 
-        protected Application BartenderApplication
-        {
-            get { return this._bartenderApplication; }
-        }
-
-        protected int BartenderProcessId
-        {
-            get { return this._batenderProcessId; }
-        }
+        protected Application BartenderApplication => this._bartenderApplication;
+        protected int BartenderProcessId => this._batenderProcessId;
 
         public async Task StartBartenderAsync()
         {
             await Task.Run(() =>
             {
-                this._bartenderApplication = new Application()
-                {
-                };
+                this._bartenderApplication = new Application();
 
                 this._batenderProcessId = this._bartenderApplication.ProcessId;
             });
@@ -36,13 +27,11 @@ namespace Ssapj.ControlBartenderViaCom
         protected void RestartBartender()
         {
             //reset
-            Marshal.FinalReleaseComObject(this._bartenderApplication);
+            FinalReleaseComObject(this._bartenderApplication);
             this._bartenderApplication = null;
             this._batenderProcessId = -1;
 
-            this._bartenderApplication = new Application()
-            {
-            };
+            this._bartenderApplication = new Application();
 
             this._batenderProcessId = this._bartenderApplication.ProcessId;
         }
@@ -71,7 +60,7 @@ namespace Ssapj.ControlBartenderViaCom
                 }
                 finally
                 {
-                    Marshal.FinalReleaseComObject(this._bartenderApplication);
+                    FinalReleaseComObject(this._bartenderApplication);
                 }
             }
         }

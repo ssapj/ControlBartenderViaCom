@@ -4,6 +4,7 @@ minimum necessary code to control BarTender (by Seagull Scientific Inc.) via COM
 ## Target Environment
 - [BarTender] 10.1 (Automation edition or Enterprise Automation edition)
 - .NET Framework 4.5
+- C# 6.0
 
 ## How to use
 This Class Library controls just Start/End of BarTender and its managed reference, so if you want control formats and more, create a new derived class like below
